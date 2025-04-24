@@ -1,0 +1,61 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-title>ورود به حساب کاربری</mat-card-title>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>ایمیل</mat-label>
+        <mat-icon matPrefix>email</mat-icon>
+        <input matInput formControlName="email" type="email" required />
+        <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+          ایمیل الزامی است
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+          لطفا یک ایمیل معتبر وارد کنید
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>رمز عبور</mat-label>
+        <mat-icon matPrefix>lock</mat-icon>
+        <input
+          matInput
+          formControlName="password"
+          [type]="hidePassword ? 'password' : 'text'"
+          required
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hidePassword = !hidePassword"
+          type="button"
+        >
+          <mat-icon>{{
+            hidePassword ? "visibility_off" : "visibility"
+          }}</mat-icon>
+        </button>
+        <mat-error *ngIf="loginForm.get('password')?.invalid">
+          رمز عبور الزامی است
+        </mat-error>
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="primary"
+        class="btn-submit"
+        type="submit"
+        [disabled]="loginForm.invalid || loading()"
+      >
+        <mat-spinner diameter="20" *ngIf="loading()"></mat-spinner>
+        <span *ngIf="!loading()" class="login-btn">
+          <mat-icon>login</mat-icon>
+          ورود به آموزشگاه
+        </span>
+      </button>
+
+      <div class="additional-links">
+        <a href="#" matTooltip="ثبت نام به زودی در دسترس خواهد بود" >ثبت نام</a>
+        <a href="#" matTooltip="فراموشی رمز عبور به زودی فعال می‌شود">فراموشی رمز عبور</a>
+      </div>
+    </form>
+  </mat-card>
+</div>

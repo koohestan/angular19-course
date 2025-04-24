@@ -1,0 +1,277 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  font-family: 'Vazir';
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.5s ease-in-out;
+
+  mat-card-title {
+    color: #1e3c72;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: #2a5298;
+      border-radius: 2px;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.btn-submit {
+  width: 100%;
+  color: #fff;
+}
+
+mat-form-field {
+  .mat-mdc-form-field-flex {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+
+  &.mat-focused {
+    .mat-mdc-form-field-flex {
+      background-color: #fff;
+      box-shadow: 0 0 0 2px rgba(42, 82, 152, 0.2);
+    }
+  }
+}
+
+button[type="submit"] {
+  margin-top: 1rem;
+  height: 48px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  background: linear-gradient(45deg, #1e3c72, #2a5298);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  &:not(:disabled) {
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(42, 82, 152, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    background: linear-gradient(45deg, #999, #777);
+  }
+}
+
+// اضافه کردن آیکون‌ها به فیلدها
+::ng-deep {
+  .mat-form-field-prefix {
+    color: #1e3c72;
+    margin-right: 8px;
+  }
+}
+
+// انیمیشن ورود
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive styles
+@media (max-width: 480px) {
+  .login-card {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+// اضافه کردن لینک ثبت نام و فراموشی رمز عبور
+.additional-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+
+  a {
+    color: #1e3c72;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #2a5298;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+// اضافه کردن فونت وزیر به همه المان‌ها
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  font-family: 'Vazir', sans-serif;
+}
+
+// استایل برای همه لیبل‌ها و عناوین Material
+::ng-deep {
+  .mat-mdc-form-field-label,
+  .mdc-floating-label,
+  .mat-mdc-input-element,
+  .mat-mdc-select-value-text,
+  .mat-mdc-form-field,
+  .mat-mdc-button,
+  .mat-mdc-card-title,
+  .mat-mdc-card-content,
+  .mat-mdc-error {
+    font-family: 'Vazir', sans-serif !important;
+  }
+
+  // برای آیکون‌ها
+  .material-icons {
+    font-family: 'Material Icons' !important;
+  }
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.5s ease-in-out;
+
+  mat-card-title {
+    color: #1e3c72;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Vazir', sans-serif;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: #2a5298;
+      border-radius: 2px;
+    }
+  }
+}
+
+// استایل برای خطاها
+mat-error {
+  font-family: 'Vazir', sans-serif;
+  font-size: 0.75rem;
+}
+
+// استایل برای دکمه‌ها
+button {
+  font-family: 'Vazir', sans-serif !important;
+
+  .mat-icon {
+    margin-left: 8px;
+  }
+}
+
+// استایل برای لینک‌های اضافی
+.additional-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+
+  a {
+    font-family: 'Vazir', sans-serif;
+    color: #1e3c72;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #2a5298;
+      text-decoration: underline;
+    }
+  }
+}
+
+// استایل برای فیلدهای ورودی
+mat-form-field {
+  .mat-mdc-form-field-flex {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+
+  input {
+    font-family: 'Vazir', sans-serif !important;
+  }
+
+  mat-label {
+    font-family: 'Vazir', sans-serif !important;
+  }
+}
+
+// اندازه و فاصله آیکون‌ها
+.mat-icon {
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.login-btn{
+  color: white;
+}
+
+// تنظیم اندازه فونت برای موبایل
+@media (max-width: 480px) {
+  .login-card {
+    mat-card-title {
+      font-size: 1.2rem;
+    }
+
+    .additional-links {
+      font-size: 0.8rem;
+    }
+  }
+}

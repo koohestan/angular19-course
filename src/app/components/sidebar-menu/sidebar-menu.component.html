@@ -1,0 +1,18 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened="true" class="sidenav" #sidenav>
+    <mat-nav-list>
+      <mat-list-item routerLink="/dashboard">داشبورد</mat-list-item>
+      <mat-list-item routerLink="/students-management">مدیریت دانشجویان</mat-list-item>
+      <mat-list-item routerLink="/courses-management">دوره‌های آموزشی</mat-list-item>
+      <mat-list-item routerLink="/teachers-management">مدیریت اساتید</mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="main-content">
+    <mat-toolbar>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon class="menu-icon">menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
